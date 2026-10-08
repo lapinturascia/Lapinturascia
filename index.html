@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lira Athaydes Pinturas & Reformas — pintura residencial e comercial, reformas, alvenaria, acabamentos, gesso, drywall e pequenos reparos. Atendimento para Rio e Grande Rio.">
+  <title>Lira Athaydes | Pinturas & Reformas</title>
+  <style>
+    :root{
+      --gold:#ffbd18;
+      --gold2:#f6a900;
+      --black:#080808;
+      --dark:#111111;
+      --white:#f8f8f8;
+      --muted:#bdbdbd;
+      --card:#171717;
+      --line:rgba(255,189,24,.28);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(8,8,8,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.5px}
+    .brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:24px;align-items:center;font-weight:700;font-size:.95rem}
+    .navlinks a:hover{color:var(--gold)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:999px;font-weight:900;
+      transition:.2s transform,.2s box-shadow,.2s background;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:#090909;box-shadow:0 8px 28px rgba(255,189,24,.18)}
+    .btn-outline{border:1px solid var(--gold);color:var(--gold)}
+    .hero{padding:70px 0 60px;background:
+      radial-gradient(circle at 85% 20%,rgba(255,189,24,.16),transparent 32%),
+      linear-gradient(180deg,#090909,#111 72%,#080808)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+    .eyebrow{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:.85rem;margin-bottom:14px}
+    h1{font-size:clamp(2.5rem,6vw,5.3rem);line-height:.95;text-transform:uppercase;font-weight:1000}
+    h1 span{color:var(--gold)}
+    .hero p{color:#ddd;font-size:1.12rem;max-width:600px;margin:22px 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{
+      position:relative;border:1px solid var(--line);border-radius:26px;overflow:hidden;
+      box-shadow:0 25px 70px rgba(0,0,0,.5)
+    }
+    .hero-card img{display:block;width:100%;height:auto}
+    .section{padding:82px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.2rem);text-transform:uppercase}
+    .section-head h2 span{color:var(--gold)}
+    .section-head p{color:var(--muted);margin-top:12px}
+    .services{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .service{
+      background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 18px;
+      min-height:170px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .icon{font-size:2rem;color:var(--gold)}
+    .service h3{font-size:1.05rem;text-transform:uppercase}
+    .service p{color:var(--muted);font-size:.9rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+    .panel{background:linear-gradient(145deg,#171717,#0d0d0d);border:1px solid var(--line);border-radius:24px;padding:34px}
+    .panel h3{font-size:2rem;margin-bottom:14px}
+    .panel h3 span{color:var(--gold)}
+    .checks{list-style:none;display:grid;gap:12px;margin-top:20px}
+    .checks li:before{content:"✓";color:var(--gold);font-weight:1000;margin-right:10px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    .stat{padding:20px;background:#0b0b0b;border-radius:16px;border:1px solid #252525}
+    .stat strong{display:block;color:var(--gold);font-size:1.7rem}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;border:1px solid var(--line);background:#151515}
+    .cta{
+      padding:70px 0;background:linear-gradient(135deg,#151515,#090909);
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .cta-box{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    .cta h2{font-size:clamp(2rem,4vw,3.5rem);text-transform:uppercase;line-height:1}
+    .cta h2 span{color:var(--gold)}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .contact{
+      padding:25px;background:var(--card);border:1px solid var(--line);border-radius:18px
+    }
+    .contact small{color:var(--muted);display:block;margin-bottom:7px}
+    .contact strong{font-size:1.1rem}
+    footer{padding:28px 0;color:#999;text-align:center;font-size:.9rem}
+    .floating{
+      position:fixed;right:20px;bottom:20px;z-index:60;
+      background:#25d366;color:#061b0d;padding:14px 18px;border-radius:999px;font-weight:1000;
+      box-shadow:0 12px 35px rgba(0,0,0,.4)
+    }
+    @media(max-width:900px){
+      .hero-grid,.split{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .cta-box{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:600px){
+      nav{height:64px}
+      .navlinks{display:none}
+      .hero{padding-top:42px}
+      .services,.gallery,.stats{grid-template-columns:1fr}
+      .section{padding:62px 0}
+      .panel{padding:24px}
+      .floating{right:12px;bottom:12px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio">LIRA <span>ATHAYDES</span></a>
+      <div class="navlinks">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/5521979007194?text=Olá!%20Quero%20um%20orçamento%20para%20pintura%20ou%20reforma." target="_blank" rel="noopener">Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Seu projeto, nosso compromisso</div>
+        <h1>Pinturas <span>&</span><br>Reformas</h1>
+        <p>Qualidade, pontualidade e confiança para transformar ambientes residenciais e comerciais no Rio e Grande Rio.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="https://wa.me/5521979007194?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="banner.png" alt="Lira Athaydes Pinturas & Reformas">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <h2>O que <span>fazemos</span></h2>
+        <p>Do básico ao acabamento, do jeito que você precisa.</p>
+      </div>
+      <div class="services">
+        <article class="service"><div class="icon">🎨</div><h3>Pintura</h3><p>Residencial e comercial, interna e externa.</p></article>
+        <article class="service"><div class="icon">🏠</div><h3>Reformas</h3><p>Reformas gerais e completas.</p></article>
+        <article class="service"><div class="icon">🧱</div><h3>Alvenaria</h3><p>Alvenaria, reparos e acabamentos.</p></article>
+        <article class="service"><div class="icon">▦</div><h3>Gesso & Drywall</h3><p>Forros, paredes e soluções em gesso.</p></article>
+        <article class="service"><div class="icon">🔧</div><h3>Pequenos reparos</h3><p>Manutenção e ajustes para sua obra.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container split">
+      <div class="panel">
+        <div class="eyebrow">Por que escolher a Lira Athaydes?</div>
+        <h3>Seu projeto com <span>cuidado do início ao fim.</span></h3>
+        <p style="color:#ccc">Trabalho profissional para entregar um resultado bonito, organizado e durável, com atenção aos detalhes e ao acabamento.</p>
+        <ul class="checks">
+          <li>Pintura interna e externa</li>
+          <li>Reformas completas</li>
+          <li>Restauração de fachadas</li>
+          <li>Aplicação de texturas</li>
+          <li>Impermeabilização</li>
+          <li>Instalação de pisos e revestimentos</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><strong>5+</strong><span>frentes de serviço</span></div>
+          <div class="stat"><strong>RJ</strong><span>Rio e Grande Rio</span></div>
+          <div class="stat"><strong>100%</strong><span>foco no acabamento</span></div>
+        </div>
+      </div>
+      <div>
+        <img src="banner.png" alt="Serviços Lira Athaydes" style="width:100%;border-radius:24px;border:1px solid var(--line)">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-head">
+        <h2>Portfólio <span>visual</span></h2>
+        <p>Algumas referências de pintura, acabamento e reforma. Substitua estas imagens pelas fotos reais dos seus trabalhos para deixar o site ainda mais forte.</p>
+      </div>
+      <div class="gallery">
+        <img src="banner.png" alt="Projeto de pintura e reforma">
+        <img src="banner.png" alt="Projeto de pintura e reforma">
+        <img src="banner.png" alt="Projeto de pintura e reforma">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-box">
+      <div>
+        <div class="eyebrow">Vamos conversar?</div>
+        <h2>Transforme sua ideia em <span>resultado.</span></h2>
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/5521979007194?text=Olá!%20Quero%20fazer%20um%20orçamento." target="_blank" rel="noopener">Solicitar orçamento</a>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <div class="container">
+      <div class="section-head">
+        <h2>Entre em <span>contato</span></h2>
+        <p>Atendimento para Rio e Grande Rio.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="contact" href="tel:+5521979007194"><small>Telefone / WhatsApp</small><strong>(21) 97900-7194</strong></a>
+        <a class="contact" href="https://instagram.com/augustolapinturas" target="_blank" rel="noopener"><small>Instagram</small><strong>@augustolapinturas</strong></a>
+        <div class="contact"><small>Área de atendimento</small><strong>Rio e Grande Rio</strong></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="floating" href="https://wa.me/5521979007194?text=Olá!%20Vim%20pelo%20site%20e%20quero%20um%20orçamento." target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<footer>
+  <div class="container">© 2026 Lira Athaydes Pinturas & Reformas — Qualidade • Pontualidade • Confiança</div>
+</footer>
+</body>
+</html>
